@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배포중</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
+        }
+
+        h1 {
+            color: red;
+        }
+
+        p {
+            color: #555555;
+        }
+
+        p span {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>배포 중</h1>
+        <p><b>현재 사이트가 업데이트 중입니다. <span id="cnt">10</span>초 뒤에 다시 로딩 됩니다. </b></p>
+    </div>
+    <script>
+        let cnt = 10;
+
+        window.addEventListener('load', function () {
+            let loadinterval = setInterval(function () {
+                document.querySelector('#cnt').innerHTML = --cnt;
+                if (cnt == 0) {
+                    location.href = 'http://fbsports.co.kr';
+                    clearInterval(loadinterval);
+                }
+            }, 1000)
+        })
+
+
+    </script>
+</body>
+
+</html>

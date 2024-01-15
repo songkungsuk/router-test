@@ -1,12 +1,9 @@
-import { styled } from "styled-components"
-import React, { useReducer } from 'react';
+//import { useReducer } from 'react';
+import { Button } from "react-bootstrap";
 
 export const Buttons = () => {
-    const SimpleButton1 = styled.button`
-        color:red;
-        
-    `;
 
+    /*
     function reducer(old: number, action: string): any {
         if (action === 'up') {
             return old + 1;
@@ -15,7 +12,7 @@ export const Buttons = () => {
         }
     }
 
-    {/* useReducer는 어떤 함수를 실행할지 / 초기값 old => 0  */ }
+    /* useReducer는 어떤 함수를 실행할지 / 초기값 old => 0  
     const [num, dispatch] = useReducer(reducer, 0);
 
     function click1() {
@@ -25,11 +22,39 @@ export const Buttons = () => {
     function click2() {
         dispatch('down');
     }
-
+    */ 
     return (
         <div>
-            <SimpleButton1 onClick={click1}>{num}</SimpleButton1> &nbsp;
-            <SimpleButton1 onClick={click2}>{num}</SimpleButton1>
+            <p>
+                <Button variant="primary">Primary</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="success">Success</Button>
+                <Button variant="warning">Warning</Button>
+                <Button variant="danger">Primary</Button>
+                <Button variant="info">Dark</Button>
+                <Button variant="link">Link</Button>
+                <Button variant="light">Light</Button>
+            </p>
+            <p>
+                <Button variant="outline-primary">Primary</Button>
+                <Button variant="outline-secondary">Secondary</Button>
+                <Button variant="outline-success">Success</Button>
+                <Button variant="outline-warning">Warning</Button>
+                <Button variant="outline-danger">Primary</Button>
+                <Button variant="outline-info">Dark</Button>
+                <Button variant="outline-link">Link</Button>
+                <Button variant="outline-light">Light</Button>
+            </p>
+            <p>
+                <Button variant="primary">Primary</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="success">Success</Button>
+                <Button variant="warning">Warning</Button>
+                <Button variant="danger">Primary</Button>
+                <Button variant="info">Dark</Button>
+                <Button variant="link">Link</Button>
+                <Button variant="light">Light</Button>
+            </p>
         </div>
     )
 }

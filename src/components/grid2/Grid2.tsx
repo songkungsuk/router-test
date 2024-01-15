@@ -2,28 +2,43 @@ import { Provider } from "react-redux";
 import { legacy_createStore } from "redux";
 import { Left1 } from "./Left1";
 import { Rright1 } from "./Rright1";
-
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+/*
 function reducer(curState: any, action: any) {
-    {/* 처음 함수를 호출하면 curState 에 추가된건없어서 이구문이 실행됨 첫 return 까지 */}
-    if (curState === undefined) {
-        return {
-            num: 1
+    // ...curState 는 딥카피 
+    if (action.type === 'UP') {
+        return { ...curState, num: curState.num + Number(action.step) }
+    } else if (action.type === 'DOWN') {
+        return { ...curState, num: curState.num - Number(action.step) }
+    }
+    return curState;
+}
+
+const init = {
+    num: 1
+}
+const store = legacy_createStore(reducer, init);
+*/
+const numSlice = createSlice({
+    name: 'numSlice',
+    initialState: {
+        num: 1
+    },
+    reducers: {
+        up: (state, action: any) => {
+            state.num += action.step;
+        },
+        down: (state, action: any) => {
+            state.num -= action.step;
         }
     }
-    {/* ...curState 는 딥카피 */}
-    const newState = { ...curState }
-    if(action.type === 'UP'){
-        newState.num++;
-    }else if(action.type === 'DOWN'){
-        newState.num--;
+})
+
+const store = configureStore({
+    reducer: {
+        counter: numSlice.reducer
     }
-    
-    return newState;
-}
-const store = legacy_createStore(reducer);
-
-
-
+});
 
 export const Grid2 = () => {
     return (
@@ -31,8 +46,8 @@ export const Grid2 = () => {
             <h1>Grid2</h1>
             <div id="grid">
                 <Provider store={store}>
-                    <Left1/>
-                    <Rright1/>
+                    <Left1 />
+                    <Rright1 />
                 </Provider>
             </div>
         </div>

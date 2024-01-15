@@ -7,11 +7,11 @@ export const Rright3 = () => {
         <div>
             <h1>Rright3</h1>
             <button onClick={() => {
-                dispatch({ type: 'UP' })
+                dispatch({ type: 'numSlice/up', step:2})
             }}>+</button>
 
             <button onClick={() => {
-                dispatch({ type: 'DOWN' })
+                dispatch({ type: 'numSlice/down', step:2 })
             }}>-</button>
         </div>
     )

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 
 export const Left1 = () => {
-    const num = useSelector((state:any)=>state.num);
+    const num = useSelector((state:any)=>state.counter.num);
     return (
         <div>
             <h1>Left1 {num}</h1>
