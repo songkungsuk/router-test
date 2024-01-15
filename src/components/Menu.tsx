@@ -39,6 +39,9 @@ export const Menu = () => {
                 <Nav.Item>
                     <Nav.Link href='/login'>login</Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href='/topic'>백엔드</Nav.Link>
+                </Nav.Item>
             </Nav>
             <h3>Angc</h3>
             <a href="/">홈</a>&nbsp;
